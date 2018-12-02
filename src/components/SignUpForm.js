@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Firebase from '../fire';
-import { Link, withRouter } from 'react-router-dom';
+import { withFirebase } from '../fireIndex';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 class SignUpForm extends Component {
     state = {
@@ -10,19 +10,20 @@ class SignUpForm extends Component {
             passwordOne: '',
             passwordTwo: '',
             error: null,
-        }
+        },
+        redirect: false
     }
     render() {
         this.onSubmit = (e) => {
             e.preventDefault();
             this.props.firebase.doCreateUserWithEmailAndPassword(this.state.user.email, this.state.user.passwordOne)
                 .then(authUser => {
-                    this.setState({ ...this.state.user });
-                    this.props.history.push('/')
+                    console.log(authUser)
+                    this.setState({
+                        user: authUser,
+                        redirect: true
+                    });
                 })
-                .catch(error => {
-                    this.setState({ error });
-                });
         }
 
         this.handleChange = (e) => {
@@ -38,7 +39,12 @@ class SignUpForm extends Component {
             this.state.user.email === '' ||
             this.state.userusername === '';
 
+        if (this.state.redirect) {
+            return (<Redirect to="/home" />)
+        }
+
         return (
+
             <div>
                 <form onSubmit={this.onSubmit}>
                     <input onChange={this.handleChange} name="username" type="text" placeholder="username" />
@@ -51,5 +57,7 @@ class SignUpForm extends Component {
         );
     }
 }
+
+// const SignUpForm = withRouter(withFirebase(SignUpFormBase))
 
 export default SignUpForm;
