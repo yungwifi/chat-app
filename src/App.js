@@ -8,8 +8,10 @@ import Home from './components/Home'
 import Account from './components/Account'
 import Admin from './components/Admin'
 import Navigation from './components/Navigation';
+import withAuthentication from './withAuthentication'
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -30,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthentication(App)
