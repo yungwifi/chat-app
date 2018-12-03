@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import firebase from '../fire'
 
 class SignOut extends Component {
     render() {
         return (
             <div>
-                Sing Out Page
+                <button type="button" onClick={firebase.doSignOut}>
+                    Sign Out
+                </button>
             </div>
         );
     }

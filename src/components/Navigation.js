@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import SignOut from './SignOut';
 
 class Navigation extends Component {
     render() {
@@ -23,6 +24,9 @@ class Navigation extends Component {
                     </li>
                     <li>
                         <Link to={'/sign-up'}>Sign Up</Link>
+                    </li>
+                    <li>
+                        <SignOut />
                     </li>
                 </ul>
             </div>
