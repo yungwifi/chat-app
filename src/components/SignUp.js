@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import SignUpForm from './SignUpForm';
-import { Link } from 'react-router-dom'
 import FirebaseContext from '../fireContext'
 
 class SignUp extends Component {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { withFirebase } from '../fireIndex';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class SignUpForm extends Component {
     state = {

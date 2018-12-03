@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import firebase from '../fire'
+import React, { Component } from 'react'
+import FirebaseContext from '../fireContext'
+import SignOutButton from './SignOutButton'
 
 class SignOut extends Component {
     render() {
         return (
             <div>
-                <button type="button" onClick={firebase.doSignOut}>
-                    Sign Out
-                </button>
+                <FirebaseContext.Consumer>
+                    {firebase => <SignOutButton firebase={firebase} />}
+                </FirebaseContext.Consumer>
             </div>
         );
     }
