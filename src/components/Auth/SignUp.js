@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SignUpForm from './SignUpForm';
-import FirebaseContext from '../fireContext'
+import FirebaseContext from '../../Firebase/fireContext'
 
 class SignUp extends Component {
     render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withFirebase } from './fireContext'
+import { withFirebase } from '../Firebase/fireContext'
 import AuthUserContext from './sessionContext'
 
 

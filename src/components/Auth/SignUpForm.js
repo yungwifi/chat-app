@@ -23,6 +23,9 @@ class SignUpForm extends Component {
                         redirect: true
                     });
                 })
+                .catch(error => {
+                    this.setState({ error });
+                });
         }
 
         this.handleChange = (e) => {
@@ -52,6 +55,7 @@ class SignUpForm extends Component {
                     <input onChange={this.handleChange} name="passwordTwo" type="password" placeholder=" confirm password" />
                     <button disabled={isInvalid}>Sign Up</button>
                 </form>
+                {this.state.error && <p>{this.state.error.message}</p>}
             </div>
         );
     }

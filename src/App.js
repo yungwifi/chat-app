@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from './components/LandingPage'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
+import SignIn from './components/Auth/SignIn'
+import SignUp from './components/Auth/SignUp'
 import PasswordForget from './components/PasswordForget'
 import Home from './components/Home'
 import Account from './components/Account'
 import Admin from './components/Admin'
 import Navigation from './components/Navigation';
-import withAuthentication from './withAuthentication'
+import withAuthentication from './Session/withAuthentication'
 
 class App extends Component {
 

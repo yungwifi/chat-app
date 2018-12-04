@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FirebaseContext from '../fireContext'
+import FirebaseContext from '../../Firebase/fireContext'
 import SignOutButton from './SignOutButton'
 
 class SignOut extends Component {

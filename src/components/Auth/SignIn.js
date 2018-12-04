@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FirebaseContext from '../fireContext'
+import FirebaseContext from '../../Firebase/fireContext'
 import { Link } from 'react-router-dom'
 import SignInForm from './SignInForm'
 
